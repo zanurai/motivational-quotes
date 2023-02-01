@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import ItemQuotes from "./ItemQuotes";
+import Stack from '@mui/material/Stack';
+import Box from '@mui/material/Box';
 
-function App() {
+
+
+const App = () => {
+  const [items, setItem] = useState(
+    [
+      //{ "text": "you can do it", "from": "Janaki rai" },
+      //{ "text": "this is very importent work", "from": "Gyanu" }
+    ]
+  )
+
+  const fetchData = () => {
+    return fetch("https://jsonguide.technologychannel.org/quotes.json")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data)
+        setItem(data)
+      })
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    <>
+      <div>
+
+        <Box sx={{ width: '100%' }} >
+          <Stack spacing={2}>
+            <button onClick={() => fetchData()}>Fetch</button>
+            {items.map((item) => <ItemQuotes author={item.from} text={item.text} />)}
+          </Stack>
+        </Box>
+      </div>
+
+    </>
+  )
 }
 
-export default App;
+export default App
+
+
