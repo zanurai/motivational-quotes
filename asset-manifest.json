@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/motivation/static/css/main.92bd15ca.css",
+    "main.js": "/motivation/static/js/main.10c5b55a.js",
+    "index.html": "/motivation/index.html",
+    "main.92bd15ca.css.map": "/motivation/static/css/main.92bd15ca.css.map",
+    "main.10c5b55a.js.map": "/motivation/static/js/main.10c5b55a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.92bd15ca.css",
+    "static/js/main.10c5b55a.js"
+  ]
+}
